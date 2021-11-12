@@ -13,7 +13,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/*
 class UserFacadeTest {
 
     private static EntityManagerFactory emf = EMF_Creator.createEntityManagerFactoryForTest();
@@ -69,4 +69,3 @@ class UserFacadeTest {
 
     }
  */
-}
