@@ -16,8 +16,7 @@ public class FitnessCenter {
     @OneToMany (mappedBy = "member" , cascade = CascadeType.PERSIST)
     private List<Member> members;
 
-    public FitnessCenter() {
-    }
+
 
     public FitnessCenter(Integer id, String name, String city, String pricePrMonth) {
         this.id = id;
@@ -26,6 +25,10 @@ public class FitnessCenter {
         this.pricePrMonth = pricePrMonth;
         this. members = new ArrayList<>();
     }
+    public FitnessCenter(String name) {
+    }
+
+
 
     public String getName() {
         return name;
