@@ -1,4 +1,4 @@
-package dtos;
+package dtos.FitnessCenter;
 
 import entities.FitnessCenter;
 

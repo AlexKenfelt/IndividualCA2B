@@ -2,11 +2,11 @@ package rest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import dtos.FitnessCenterDTO;
+import dtos.FitnessCenter.FitnessCenterDTO;
+import dtos.FitnessCenter.FitnessCentersDTO;
 import facades.FitnessCenterFacade;
 import utils.EMF_Creator;
 
-import javax.json.bind.Jsonb;
 import javax.persistence.EntityManagerFactory;
 import javax.websocket.server.PathParam;
 import javax.ws.rs.GET;
@@ -41,8 +41,8 @@ public class FitnessResource {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public String getAllFitness() {
-        FitnessCenterDTO fitnessCenterDTO = FACADE.getAll();
-        return gson.toJson(fitnessCenterDTO);
+        FitnessCentersDTO fitnessCentersDTO = FACADE.getAll();
+        return gson.toJson(fitnessCentersDTO);
     }
 
 

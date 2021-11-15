@@ -1,6 +1,7 @@
 package facades;
 
-import dtos.FitnessCenterDTO;
+import dtos.FitnessCenter.FitnessCenterDTO;
+import dtos.FitnessCenter.FitnessCentersDTO;
 import entities.FitnessCenter;
 
 import javax.persistence.EntityManager;
@@ -38,12 +39,15 @@ public class FitnessCenterFacade {
         }
     }
 
-    public FitnessCenterDTO getAll() {
+    public FitnessCentersDTO getAll() {
         EntityManager em = emf.createEntityManager();
         try {
+            em.getTransaction().begin();
             TypedQuery<FitnessCenter> query = em.createQuery("SELECT f from FitnessCenter f", FitnessCenter.class);
             List<FitnessCenter> result = query.getResultList();
-            return new FitnessCenterDTO((FitnessCenter) result);
+            FitnessCentersDTO fitnessCentersDTO = new FitnessCentersDTO(result);
+            em.getTransaction().commit();
+            return fitnessCentersDTO;
         } finally {
             em.close();
         }

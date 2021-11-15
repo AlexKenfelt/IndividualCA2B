@@ -3,8 +3,6 @@ package facades;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-import dtos.FitnessCenterDTO;
-import dtos.MemberDTO;
 import entities.FitnessCenter;
 import entities.Member;
 import utils.EMF_Creator;
