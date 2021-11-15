@@ -24,7 +24,7 @@ public class FitnessResource {
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
 
-
+//fitness
     @Context
     SecurityContext securityContext;
 
