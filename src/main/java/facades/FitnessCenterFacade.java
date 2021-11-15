@@ -28,7 +28,7 @@ public class FitnessCenterFacade {
     public FitnessCenterDTO addFitnessCenter (FitnessCenterDTO fitnessCenterDTO) {
         EntityManager em = emf.createEntityManager();
         try {
-            FitnessCenter fitnessCenter = new FitnessCenter(fitnessCenterDTO.getName());
+            FitnessCenter fitnessCenter = new FitnessCenter(fitnessCenterDTO.getName(),fitnessCenterDTO.getCity(),fitnessCenterDTO.getPricePrMonth());
             em.getTransaction().begin();
             em.persist(fitnessCenter);
             em.getTransaction().commit();

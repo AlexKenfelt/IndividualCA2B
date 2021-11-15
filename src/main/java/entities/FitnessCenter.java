@@ -13,22 +13,19 @@ public class FitnessCenter {
     private String city;
     private String pricePrMonth;
 
-    @OneToMany (mappedBy = "member" , cascade = CascadeType.PERSIST)
+    @OneToMany (mappedBy = "fitnessCenter" , cascade = CascadeType.PERSIST)
     private List<Member> members;
 
 
+    public FitnessCenter() {
+    }
 
-    public FitnessCenter(Integer id, String name, String city, String pricePrMonth) {
-        this.id = id;
+    public FitnessCenter(String name, String city, String pricePrMonth) {
         this.name = name;
         this.city = city;
         this.pricePrMonth = pricePrMonth;
-        this. members = new ArrayList<>();
+        this.members = new ArrayList<>();
     }
-    public FitnessCenter(String name) {
-    }
-
-
 
     public String getName() {
         return name;
@@ -60,5 +57,14 @@ public class FitnessCenter {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+
+    public void addMember(Member member) {
+    this.members.add(member);
+    if (member != null) {
+        member.setFitnessCenter(this);
+    }
+
     }
 }

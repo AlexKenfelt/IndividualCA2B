@@ -9,21 +9,19 @@ public class MemberDTO {
     private int memberNr;
     private boolean isMemberActive;
 
-    public MemberDTO(Integer id, String name, String email, int memberNr, boolean isMemberActive) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.memberNr = memberNr;
-        this.isMemberActive = isMemberActive;
-    }
+
 
     public MemberDTO(Member member) {
-        this.id = member.getId();
         this.name = member.getName();
         this.email = member.getEmail();
-        this.memberNr = member.getMemberNr();
-        this.isMemberActive = member.getMember().isMemberActive();
     }
+
+    public MemberDTO(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+
 
     public Integer getId() {
         return id;

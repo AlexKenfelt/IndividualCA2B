@@ -29,7 +29,7 @@ public class MemberFacade {
 
     public MemberDTO submitMember (MemberDTO memberDTO){
         EntityManager em = emf.createEntityManager();
-        Member member = new Member(memberDTO.getId(), memberDTO.getName(), memberDTO.getEmail(), memberDTO.getMemberNr(), memberDTO.isMemberActive());
+        Member member = new Member(memberDTO.getName(), memberDTO.getEmail());
     try{
         em.getTransaction().begin();
         em.persist(member);

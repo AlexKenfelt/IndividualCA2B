@@ -14,7 +14,7 @@ public class Member {
     private boolean isMemberActive;
 
     @ManyToOne
-    private Member member;
+    private FitnessCenter fitnessCenter;
 
     public Member() {
     }
@@ -25,6 +25,11 @@ public class Member {
         this.email = email;
         this.memberNr = memberNr;
         this.isMemberActive = isMemberActive;
+    }
+
+    public Member(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 
     public Integer getId() {
@@ -67,11 +72,11 @@ public class Member {
         isMemberActive = memberActive;
     }
 
-    public Member getMember() {
-        return member;
+    public FitnessCenter getFitnessCenter() {
+        return fitnessCenter;
     }
 
-    public void setMember(Member member) {
-        this.member = member;
+    public void setFitnessCenter(FitnessCenter fitnessCenter) {
+        this.fitnessCenter = fitnessCenter;
     }
 }
